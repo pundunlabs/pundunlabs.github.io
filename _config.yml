@@ -1,0 +1,21 @@
+
+name: "Growbeard"
+description: "Documentation site for Growbeard Framework"
+
+url: "http://0.0.0.0:4000/"
+
+#paginate: 10
+
+#markdown: rdiscount
+#rdiscount:
+#    extensions:
+#      - generate_toc
+
+markdown: redcarpet
+redcarpet:
+    extensions: [with_toc_data, fenced_code_blocks, space_after_headers]
+
+permalink: pretty
+
+gems:
+  - jekyll-sitemap

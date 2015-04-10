@@ -1,0 +1,7 @@
+#ignore emacs bkp + autostore
+*~
+*\#
+*/.#*
+#ignore vim swp
+*.swp
+

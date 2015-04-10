@@ -1,0 +1,10 @@
+
+<div class>
+    <nav class="bs-docs-sidebar hidden-print">
+	<ul id="sidebar" class="nav nav-stacked bs-docs-sidenav fixed" >
+	    {% assign pages_list = site.pages | sort: 'order'  %}
+	    {% assign group = 'navigation' %}
+	    {% include pages_list %}
+	</ul>
+    </nav>
+</div>

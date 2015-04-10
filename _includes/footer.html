@@ -1,0 +1,20 @@
+	</div>
+
+	<script src="/js/jquery-1.11.2.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/toc.js"></script>
+
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		
+		$('#toc').toc();
+		$('body').scrollspy({
+		     target: '#sidebar'
+		});
+		$( "li.active" ).parent().closest( "li" ).addClass( "active" );
+		$( "ul.sub-ul" ).parent().children(":first").append( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
+	    });
+	</script>
+
+    </body>
+</html>

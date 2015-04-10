@@ -1,0 +1,57 @@
+{% for node in pages_list %}
+    {% assign has_sublist = false %}
+    {% assign depth = node.url | split: "/" | size %}
+    
+    {% if depth == 0 %}
+	{% if node.url == page.url%}
+	    <li class="active">
+	{% else %}
+	    <li>
+	{% endif %}
+	    <a href="{{node.url}}">{{node.title}}</a>
+	</li>
+    {% endif %}
+
+    {% if depth == 2 %}
+	{% if node.url == page.url%}
+	    <li class="active">
+	{% else %}
+	    <li>
+	{% endif %}
+	    <a href="{{node.url}}">{{node.title}}</a>
+	{% for j in pages_list %}
+	    
+	    {% if node.url != j.url and j.url contains node.url %}
+
+		{% unless has_sublist %}
+		    <ul  id="sidebar" class="nav nav-stacked sub-ul" >
+		    {% assign has_sublist = true %}
+		{% endunless %}
+		
+		{% if j.url == page.url%}
+		    <li class="active">
+		{% else %}
+		    <li>
+		{% endif %}
+		    <a href="{{j.url}}">{{j.title}}</a>
+		</li>
+	    {% endif %}	
+
+	{% endfor %}
+	
+	{% if has_sublist %}
+	    </ul>
+	    {% assign has_sublist = false %}
+	{% endif %}
+	</li>
+
+    {% endif %}
+
+{% endfor %}
+
+
+{% assign has_sublist = nil %}
+{% assign depth = nil %}
+{% assign leaf = nil %}
+{% assign pages_list = nil %}
+{% assign group = nil %}

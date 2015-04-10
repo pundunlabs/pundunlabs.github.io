@@ -1,0 +1,45 @@
+{% include header.html %}
+<div class="row-fluid">
+  <div class="col-lg-8">
+    <!-- Breadcrumbs: -->
+    {% unless page.no_breadcrumbs %}
+	<div id="breadcrumbs" class="no-print">
+	    {% capture url_parts %}{{ page.url | replace:'/'," " }}{% endcapture %}
+	    {% capture maybe_index_html %}{{ page.url | split: '/' | last }}{% endcapture %}
+	    
+	    {% if page.breadcrumb_limit %}
+		{% assign num_parts = page.breadcrumb_limit %}
+	    {% else %}
+		{% capture num_parts %}{{ url_parts | number_of_words }}{% endcapture %}
+	    {% endif %}
+	    
+	    {% assign previous="" %}
+		<ol class="breadcrumb">
+		    <li><a href="/">Home</a></li>
+		{% for unused in (1..num_parts) %}
+		    {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
+		    {% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
+		
+		    <li><a href="{{previous}}">{{first_word}}</a></li>
+		
+		
+		    {% unless forloop.last %} {% endunless %}
+		
+		    {% capture url_parts %}{{ url_parts |remove_first:first_word }}{% endcapture %}
+		{% endfor %}
+		</ol>
+	</div>
+    {% endunless %}
+    <!-- Breadcrumbs: -->
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="col-lg-8">
+	<div id=toc></div>
+	{{ content }}
+  </div>
+  <div class="col-lg-4">
+    {% include sidebar.html %}
+  </div>
+</div>
+{% include footer.html %}
