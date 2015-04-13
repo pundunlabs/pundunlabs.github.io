@@ -195,44 +195,40 @@ Content of enterdb.json:</p>
 <p>Close an existing enterdb database.</p>
 
 <h4 id="create-table">Create Table</h4>
-
-<blockquote>
-<p>TODO: Change the function name to create_db!</p>
-</blockquote>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">create_table</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">(),</span> <span class="nv">KeyDef</span><span class="p">::[</span><span class="n">atom</span><span class="p">()],</span> <span class="nv">ColumnsDef</span><span class="p">::[</span><span class="n">atom</span><span class="p">()],</span> <span class="nv">IndexesDef</span><span class="p">::[</span><span class="n">atom</span><span class="p">()],</span> <span class="nv">Options</span><span class="p">::[</span><span class="n">table_option</span><span class="p">()])</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
-
-<span class="nv">Creates</span> <span class="n">a</span> <span class="n">table</span> <span class="n">that</span> <span class="n">is</span> <span class="n">defined</span> <span class="n">by</span> <span class="nv">Name</span><span class="p">,</span> <span class="nv">Key</span><span class="p">,</span> <span class="nv">Columns</span> <span class="ow">and</span> <span class="n">optionally</span> <span class="nv">Indexes</span><span class="p">.</span> <span class="nv">Key</span> <span class="n">is</span> <span class="n">a</span> <span class="n">list</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">list</span> <span class="n">has</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="nb">element</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">key</span> <span class="n">will</span> <span class="n">ba</span> <span class="n">a</span> <span class="n">compound</span> <span class="n">key</span><span class="p">.</span> <span class="nv">Columns</span> <span class="n">list</span> <span class="n">consist</span> <span class="k">of</span> <span class="n">name</span> <span class="k">of</span> <span class="n">each</span> <span class="n">column</span> <span class="n">as</span> <span class="n">atom</span> <span class="ow">and</span> <span class="n">inclusion</span> <span class="k">of</span> <span class="n">key</span> <span class="n">columns</span> <span class="n">are</span> <span class="n">optional</span><span class="p">.</span> <span class="nv">Indexes</span> <span class="n">list</span> <span class="n">are</span> <span class="n">optional</span> <span class="ow">and</span> <span class="n">an</span> <span class="n">index</span> <span class="n">table</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="n">for</span> <span class="n">each</span> <span class="n">coulmn</span> <span class="n">provided</span> <span class="n">in</span> <span class="n">this</span> <span class="n">argument</span><span class="p">.</span> <span class="nv">Any</span> <span class="n">given</span> <span class="n">index</span> <span class="n">column</span> <span class="n">is</span> <span class="ow">not</span> <span class="n">neccesarly</span> <span class="n">included</span> <span class="n">in</span> <span class="nv">Columns</span><span class="p">.</span>
 </code></pre></div>
+<p>Creates a table that is defined by Name, Key, Columns and optionally Indexes. Key is a list and if list has more than one element, then the key will ba a compound key. Columns list consist of name of each column as atom and inclusion of key columns are optional. Indexes list are optional and an index table will be created for each coulmn provided in this argument. Any given index column is not neccesarly included in Columns.</p>
+
 <h4 id="delete">Delete</h4>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">delete</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">(),</span> <span class="nv">Key</span><span class="p">::</span><span class="nf">key</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Delete Key from database with name Name.</p>
+<p>Delete Key from table with name Name.</p>
 
-<h4 id="delete-db">Delete DB</h4>
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">delete_db</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
+<h4 id="delete-table">Delete Table</h4>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">delete_table</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Delete a database completely. Ensures the database is closed before deletion.</p>
+<p>Delete a database table completely. Ensures the table is closed before deletion.</p>
 
-<h4 id="open-db">Open DB</h4>
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">open_db</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
+<h4 id="open-table">Open Table</h4>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">open_table</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Open an existing enterdb database.</p>
+<p>Open an existing enterdb database table.</p>
 
 <h4 id="read">Read</h4>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">read</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">(),</span> <span class="nv">Key</span><span class="p">::</span><span class="nf">key</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="n">ok</span><span class="p">,</span> <span class="n">value</span><span class="p">()}</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Reads Key from database with name Name.</p>
+<p>Reads Key from table with name Name.</p>
 
 <h4 id="read-range">Read Range</h4>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">read_range</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">(),</span> <span class="nv">Range</span><span class="p">::</span><span class="nf">key_range</span><span class="p">(),</span> <span class="nv">Limit</span><span class="p">::</span><span class="nf">pos_integer</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="n">ok</span><span class="p">,</span> <span class="p">[</span><span class="n">kvp</span><span class="p">()]}</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Reads a Range of Keys from database with name Name and returns mac Limit items.
+<p>Reads a Range of Keys from table with name Name and returns max Limit items from each local shard of the table.
 Note that the Limit is the maximum number of consequtive reads from a local shard. If the limit is low, resulting list of entries will be incomplete. </p>
 
 <h4 id="write">Write</h4>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">write</span><span class="p">(</span><span class="nv">Name</span><span class="p">::</span><span class="nf">string</span><span class="p">(),</span> <span class="nv">Key</span><span class="p">::</span><span class="nf">key</span><span class="p">(),</span> <span class="nv">Columns</span><span class="p">::[</span><span class="n">column</span><span class="p">()])</span> <span class="o">-&gt;</span> <span class="n">ok</span> <span class="p">|</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span> <span class="nv">Reason</span><span class="p">::</span><span class="nf">term</span><span class="p">()}</span>
 </code></pre></div>
-<p>Writes Key/Columns to database with name Name.</p>
+<p>Writes Key/Columns to table with name Name.</p>
 
 <h3 id="example-use">Example Use</h3>
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">test_db</span><span class="p">()</span> <span class="o">-&gt;</span>
@@ -271,7 +267,7 @@ Note that the Limit is the maximum number of consequtive reads from a local shar
 <blockquote>
 <p>More and up-to-date documentation can be obtained as generated edoc.</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$enterdb$ </span>make edoc
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">enterdb<span class="nv">$ </span>make edoc
 </code></pre></div>
   </div>
   <div class="col-lg-4">

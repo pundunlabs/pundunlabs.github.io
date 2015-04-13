@@ -108,51 +108,49 @@ close_db(Name::string()) -> ok | {error, Reason::term()}
 Close an existing enterdb database.
 
 #### Create Table
-> TODO: Change the function name to create_db!
 
 ```erlang
 create_table(Name::string(), KeyDef::[atom()], ColumnsDef::[atom()], IndexesDef::[atom()], Options::[table_option()]) -> ok | {error, Reason::term()}
-
+```
 Creates a table that is defined by Name, Key, Columns and optionally Indexes. Key is a list and if list has more than one element, then the key will ba a compound key. Columns list consist of name of each column as atom and inclusion of key columns are optional. Indexes list are optional and an index table will be created for each coulmn provided in this argument. Any given index column is not neccesarly included in Columns.
 
-```
 
 #### Delete 
 ```erlang
 delete(Name::string(), Key::key()) -> ok | {error, Reason::term()}
 ```
-Delete Key from database with name Name.
+Delete Key from table with name Name.
 
-#### Delete DB
+#### Delete Table
 ```erlang
-delete_db(Name::string()) -> ok | {error, Reason::term()}
+delete_table(Name::string()) -> ok | {error, Reason::term()}
 ```
-Delete a database completely. Ensures the database is closed before deletion.
+Delete a database table completely. Ensures the table is closed before deletion.
 
-#### Open DB
+#### Open Table
 ```erlang
-open_db(Name::string()) -> ok | {error, Reason::term()}
+open_table(Name::string()) -> ok | {error, Reason::term()}
 ```
-Open an existing enterdb database.
+Open an existing enterdb database table.
 
 #### Read
 ```erlang
 read(Name::string(), Key::key()) -> {ok, value()} | {error, Reason::term()}
 ```
-Reads Key from database with name Name.
+Reads Key from table with name Name.
 
 #### Read Range
 ```erlang
 read_range(Name::string(), Range::key_range(), Limit::pos_integer()) -> {ok, [kvp()]} | {error, Reason::term()}
 ```
-Reads a Range of Keys from database with name Name and returns mac Limit items.
+Reads a Range of Keys from table with name Name and returns max Limit items from each local shard of the table.
 Note that the Limit is the maximum number of consequtive reads from a local shard. If the limit is low, resulting list of entries will be incomplete. 
 
 #### Write
 ```erlang
 write(Name::string(), Key::key(), Columns::[column()]) -> ok | {error, Reason::term()}
 ```
-Writes Key/Columns to database with name Name.
+Writes Key/Columns to table with name Name.
 
 
 ### Example Use
@@ -196,6 +194,6 @@ test_db() ->
 > More and up-to-date documentation can be obtained as generated edoc.
 
 ```sh
-$enterdb$ make edoc
+enterdb$ make edoc
 ```
 {% endraw %}

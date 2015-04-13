@@ -23,7 +23,7 @@ It includes following components:
 ## Getting Started
 - [Installation](/installation/)
 - [System Architecture](/system_architecture)
-- [EnterDB User Manuel] (/applications/enterdb)
+- [EnterDB User Manual] (/applications/enterdb)
 
 ## Continous Integration
 A [Jenkins installation](http://sitting:8000/) contains build and test jobs for the project. 
