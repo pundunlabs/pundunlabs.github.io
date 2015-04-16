@@ -4,11 +4,11 @@ title: Home
 group: "navigation"
 order: "000"
 ---
-# Growbeard - The Soft Real Time Analytics Framework
+# Pundun - The Soft Real Time Analytics Framework
 
 > NOTICE: Even though this documentation is shared in public domain, the code and its derivatives are not shared to public yet. Which makes some of the links shared in this document are not reachable from public domain.
 
-Growbeard is an under development codebase for the analytics framework.
+Pundun is an under development codebase for the analytics framework.
 It is mainly based on erlang/OTP platform.
 
 It includes following components:

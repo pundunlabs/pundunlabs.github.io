@@ -4,4 +4,5 @@
 */.#*
 #ignore vim swp
 *.swp
-
+#ignore generated code
+_site/
