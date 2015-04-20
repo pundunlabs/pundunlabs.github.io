@@ -319,3 +319,17 @@ END
 
 ```
 
+### 6 History
+
+#### 6.1 Publication History
+
+| Version | Date       | Note          |
+|:------- |:-----------|:--------------|
+| 0.1.0     | 2015-05-01 | Not published |
+
+#### 6.2 Change History
+
+| Date       | ChangeID | Comment   | Old Version | New Version |
+|:-----------|:---------|:----------|:------------|:------------|
+| 2015-05-01 | -        | Dummy Row | v0.1.0      | v0.1.1      |
+
