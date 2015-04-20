@@ -13,7 +13,16 @@ url: "http://0.0.0.0:4000/"
 
 markdown: redcarpet
 redcarpet:
-    extensions: [with_toc_data, fenced_code_blocks, space_after_headers]
+    renderer: [smart]
+    extensions: [with_toc_data, fenced_code_blocks, space_after_headers, tables, no_intra_emphasis, autolink]
+
+#Github defaults that can be overwritten
+#highlighter: pygments
+#github: [Repository metadata]
+#Github defaults that cannot be overwritten
+#safe: true
+#lsi: false
+#End Github Defaults
 
 permalink: pretty
 

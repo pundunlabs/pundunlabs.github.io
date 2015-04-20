@@ -66,11 +66,11 @@ Content of enterdb.json:
 
 #### Function Index
 
-- close_db/1:	Close an existing enterdb database.
+- close_table/1:	Close an existing enterdb database.
 - create_table/5:	Creates a table that is defined by Name, Key, Columns and optionally Indexes.
 - delete/2:	Delete Key from table with name Name.
-- delete_db/1:	Delete a database completely.
-- open_db/1:	Open an existing enterdb database.
+- delete_table/1:	Delete a database completely.
+- open_table/1:	Open an existing enterdb database.
 - read/2:	Reads Key from table with name Name.
 - read_range/3:	Reads a Range of Keys from table with name Name and returns mac Limit items.
 - write/3:	Writes Key/Columns to table with name Name.
@@ -101,9 +101,9 @@ Content of enterdb.json:
 
 ```
 
-#### Close Database
+#### Close Table
 ```erlang
-close_db(Name::string()) -> ok | {error, Reason::term()}
+close_table(Name::string()) -> ok | {error, Reason::term()}
 ```
 Close an existing enterdb database.
 

@@ -11,6 +11,11 @@
 		$('body').scrollspy({
 		     target: '#sidebar'
 		});
+	
+		$( "table" ).each( function() {
+			$(this).addClass( "table table-bordered" );
+		    });
+		
 		$( "li.active" ).parent().closest( "li" ).addClass( "active" );
 		$( "ul.sub-ul" ).parent().children(":first").append( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
 	    });
