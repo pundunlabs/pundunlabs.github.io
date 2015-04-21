@@ -4,49 +4,48 @@ title: Apollo
 group: "navigation"
 order: "120"
 ---
+# Apollo
 
-Apollo: ASN.1 Defined Binary Protocol implementing Pundun Framework Procedures.
+ASN.1 Defined Binary Protocol implementing Pundun Framework Procedures.
 
-### 1 Scope
+## Scope
 This document specifies the Apollo Protocol between the Pundun - The Soft Real Time Analytics Framework - and the Clients that run database operations on Pundun..
 Procedures, Messages, Information elements and the ASN.1 Definitions are described in this document.
 
-### 2 Definitions and Abbreviations
+## Definitions and Abbreviations
 
 - Client: Any entity that interacts with Pundun through Appolo protocol.
 
-### 3 General
+## General
 The procedures defined int his document specifies Pundun Framework behaviour during interaction with clients.
-### 4 Apollo Procedures
+## Apollo Procedures
 
-#### 4.1 Connection Procedure
-
-TODO: Define procedure
-
-#### 4.2 Database Operation Procedure
+### Connection Procedure
 
 TODO: Define procedure
 
-#### 4.3 Abort
+### Database Operation Procedure
+
+TODO: Define procedure
+
+### Abort
 
 TODO: Define procedure
 
 
-### 5 Elements for Apollo Communications 
+## Elements for Apollo Communications 
 
-#### 5.1 Message Functional Definition and Content
+### Message Functional Definition and Content
 
-##### 5.1.1 ConnectionRequest
+#### ConnectionRequest
 
 TODO: Define message
 
-
-##### 5.1.2 ConnectionResponse
+#### ConnectionResponse
 
 TODO: Define message
 
-
-##### 5.1.3 CreateTable
+#### CreateTable
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
@@ -56,32 +55,32 @@ TODO: Define message
 | Indexes | O | (1..maxNoOfIndexes) | 5.2 | List of FieldNames that compose the indexes of the table. |
 | TableOptions | M |  | 5.2 | List of TableOption. |
 
-##### 5.1.4 OpenTable
+#### OpenTable
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
 | TableName | M | | 5.2 | String representation of the database table name. |
 
-##### 5.1.5 CloseTable
+#### CloseTable
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
 | TableName | M | | 5.2 | String representation of the database table name. |
 
-##### 5.1.6 DeleteTable
+#### DeleteTable
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
 | TableName | M | | 5.2 | String representation of the database table name. |
 
-##### 5.1.7 Read
+#### Read
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
 | TableName | M | | 5.2 | String representation of the database table name. |
 | Key | M |  | 5.2 | The Key to be read from the Table. |
 
-##### 5.1.8 Write
+#### Write
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
@@ -89,14 +88,14 @@ TODO: Define message
 | Key | M |  | 5.2 | The Key to be written to the Table. |
 | Columns | M |  | 5.2 | The Columns to be written to the Table. |
 
-##### 5.1.9 Delete
+#### Delete
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
 | TableName | M | | 5.2 | String representation of the database table name. |
 | Key | M |  | 5.2 | The Key to be deleted from the Table. |
 
-##### 5.1.10 RangeRead
+#### RangeRead
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
@@ -104,7 +103,7 @@ TODO: Define message
 | KeyRange | M |  | 5.2 | The KeyRAnge to be read from the Table. |
 | Limit | M | | 5.2 | Maximum number of entries to be read from each local shard of the Table. |
 
-##### 5.1.11 BatchWrite
+#### BatchWrite
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
@@ -114,9 +113,9 @@ TODO: Define message
 
 Note that deletion of specified keys will be performed before writing the specified KVPs.
 
-#### 5.2 Information Element Functional Definition and Content
+### Information Element Functional Definition and Content
 
-##### 5.2.1 TableOption
+#### TableOption
 
 | IE Name | Precence | Range | Reference | Description |
 |:------- |:--------:|:-----:|:---------:|:-----------:|
@@ -125,16 +124,16 @@ Note that deletion of specified keys will be performed before writing the specif
 | > wrapped |  |  | 5.2 | Wrapper |
 | > backend |  |  | 5.2 | Backend |
 
-##### 5.2.2 KeyDefinition
+#### KeyDefinition
 
-##### 5.2.3 ColumnDefinition
+#### ColumnDefinition
 
-##### 5.2.4 IndexDefinition
+#### IndexDefinition
 
-##### 5.2.5 Error
+#### Error
 
 
-#### 5.3 Message And Information Element Abstract Syntax
+### Message And Information Element Abstract Syntax
 
 Below code block is a copy of APOLLO-PDU-Descriptions.asn1 file.
 
@@ -319,15 +318,15 @@ END
 
 ```
 
-### 6 History
+## History
 
-#### 6.1 Publication History
+### Publication History
 
 | Version | Date       | Note          |
 |:------- |:-----------|:--------------|
 | 0.1.0     | 2015-05-01 | Not published |
 
-#### 6.2 Change History
+### Change History
 
 | Date       | ChangeID | Comment   | Old Version | New Version |
 |:-----------|:---------|:----------|:------------|:------------|

@@ -14,7 +14,7 @@
 	    {% endif %}
 	    
 	    {% assign previous="" %}
-		<ol class="breadcrumb">
+		<ul class="breadcrumb">
 		    <li><a href="/">Home</a></li>
 		{% for unused in (1..num_parts) %}
 		    {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
@@ -27,7 +27,7 @@
 		
 		    {% capture url_parts %}{{ url_parts |remove_first:first_word }}{% endcapture %}
 		{% endfor %}
-		</ol>
+		</ul>
 	</div>
     {% endunless %}
     <!-- Breadcrumbs: -->

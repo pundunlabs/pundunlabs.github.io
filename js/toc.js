@@ -25,10 +25,19 @@ THE SOFTWARE.
   $.fn.toc = function(options) {
     var defaults = {
       noBackToTopLinks: false,
-      title: '<p>Table of Contents</p>',
+      //title: '<p>Table of Contents</p>',
+      title: function() {
+	    var h1html = $( "h1" ).html();
+	    if ( h1html ){
+		return '<p>' + $( "h1" ).html() + '</p>';
+	    }
+	    else {
+		return '<p>Table of Contents</p>';
+	    }
+	  },
       minimumHeaders: 2,
-      headers: 'h1, h2, h3, h4, h5, h6',
-      listType: 'ul', // values: [ol|ul]
+      headers: 'h2, h3, h4, h5, h6',
+      listType: 'ol', // values: [ol|ul]
       showEffect: 'none', // values: [show|slideDown|fadeIn|none]
       showSpeed: 0 //'slow' // set to 0 to deactivate effect
     },
@@ -69,7 +78,7 @@ THE SOFTWARE.
 
     var level = get_level(headers[0]),
       this_level,
-      html = settings.title + " <"+settings.listType+">";
+      html = settings.title() + " <"+settings.listType+">";
     headers.on('click', function() {
       if (!settings.noBackToTopLinks) {
         window.location.hash = this.id;

@@ -132,3 +132,79 @@
   margin-left:5px;
   cursor:pointer;
 }
+
+/* Make OL list with nested numbering in TOC*/
+ol { counter-reset: item }
+ol li { display: block }
+ol li:before { content: counters(item, ".") " "; counter-increment: item }
+
+/* Make Heading numbering
+/* Switch numbering on by adding class "countheads" to h1 */
+/* Prevent numbering for a single heading via class "nocount" */
+
+body {
+    counter-reset: h2counter;
+}
+
+h1 {
+    counter-reset: h2counter;
+}
+
+.countheads ~ h2:before {
+content: counter(h2counter) ".\0000a0\0000a0";
+	 counter-increment: h2counter;
+}
+
+h2.nocount:before {
+content: none;
+	 counter-increment: none;
+}
+h2 {
+    counter-reset: h3counter;
+}
+
+.countheads ~ h3:before {
+content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+	 counter-increment: h3counter;
+}
+h3.nocount:before {
+content: none;
+	 counter-increment: none;
+}
+h3 {
+    counter-reset: h4counter;
+}
+
+.countheads ~ h4:before {
+content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+	 counter-increment: h4counter;
+}
+h4.nocount:before {
+content: none;
+	 counter-increment: none;
+}
+h4 {
+        counter-reset: h5counter;
+}
+
+.countheads ~ h5:before {
+content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+	 counter-increment: h5counter;
+}
+h5.nocount:before {
+content: none;
+	 counter-increment: none;
+}
+h5 {
+        counter-reset: h6counter;
+}
+
+.countheads ~ h6:before {
+content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
+	 counter-increment: h6counter;
+}
+h6.nocount:before {
+content: none;
+	 counter-increment: none;
+}
+
