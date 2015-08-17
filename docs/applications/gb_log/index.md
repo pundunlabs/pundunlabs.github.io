@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: gb_log
 group: "navigation"
 order: "214"

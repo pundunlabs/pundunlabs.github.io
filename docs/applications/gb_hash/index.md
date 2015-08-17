@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: gb_hash
 group: "navigation"
 order: "213"

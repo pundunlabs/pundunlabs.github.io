@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: erl_leveldb
 group: "navigation"
 order: "211"

@@ -6,3 +6,5 @@
 *.swp
 #ignore generated code
 _site/
+#ignore local jekyll start script
+start.sh

@@ -1,8 +1,8 @@
 ---
-layout: default
-title: Home
+layout: docs
+title: Docs
 group: "navigation"
-order: "000"
+order: "100"
 ---
 # Pundun - The Soft Real Time Analytics Framework
 
@@ -26,6 +26,5 @@ It includes following components:
 - [EnterDB User Manual] (/applications/enterdb)
 
 ## Continous Integration
-A [Jenkins installation](http://sitting:8000/) contains build and test jobs for the project. 
-
+A [Jenkins installation](http://sitting:8000/) contains build and test jobs for the project.
 

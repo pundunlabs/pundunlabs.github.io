@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Installation
 group: "navigation"
 order: "105"

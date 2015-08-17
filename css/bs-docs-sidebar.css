@@ -117,6 +117,14 @@
 .pls {
     padding-left: 5px;
 }
+/*Scrollable Sidebar Start*/
+.bs-docs-sidebar > ul {
+    overflow-y: auto;
+    height: 100%;
+    direction: rtl;
+    text-align: left;
+}
+/*Scrollable Sidebar end*/
 
 /* TOC styling */
 .clickable-header {

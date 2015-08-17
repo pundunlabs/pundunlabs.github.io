@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Apollo
 group: "navigation"
 order: "120"

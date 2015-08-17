@@ -2,7 +2,7 @@
     {% assign has_sublist = false %}
     {% assign depth = node.url | split: "/" | size %}
     
-    {% if depth == 0 %}
+    {% if depth == 1 %}
 	{% if node.url == page.url%}
 	    <li class="active">
 	{% else %}
@@ -12,7 +12,7 @@
 	</li>
     {% endif %}
 
-    {% if depth == 2 %}
+    {% if depth == 3 %}
 	{% if node.url == page.url%}
 	    <li class="active">
 	{% else %}

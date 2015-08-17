@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: gb_conf
 group: "navigation"
 order: "212"

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: enterdb
 group: "navigation"
 order: "210"

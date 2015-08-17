@@ -17,7 +17,8 @@
 		    });
 		
 		$( "li.active" ).parent().closest( "li" ).addClass( "active" );
-		$( "ul.sub-ul" ).parent().children(":first").append( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
+		$( "ul.sub-ul" ).parent().children(":first").prepend( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
+		
 	    });
 	</script>
 
