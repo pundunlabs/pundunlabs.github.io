@@ -11,7 +11,7 @@ Currently it can be used as a local store.
 
 enterdb has the traditional erlan/otp application directory structure.
 
-```sh
+```shell
 $ tree
 .
 ├── ebin
@@ -53,6 +53,7 @@ Content of enterdb.json:
         "num_of_local_shards" : "32"
     }
 }
+
 ```
 #### Configuration Parameters
 - db_path ::
@@ -76,6 +77,7 @@ Content of enterdb.json:
 - write/3:	Writes Key/Columns to table with name Name.
 
 #### Type Definitions
+
 ```erlang
 -type key() :: [{atom(), term()}].
 -type key_range() :: {key(), key()}.
@@ -110,8 +112,10 @@ Close an existing enterdb database.
 #### Create Table
 
 ```erlang
-create_table(Name::string(), KeyDef::[atom()], ColumnsDef::[atom()], IndexesDef::[atom()], Options::[table_option()]) -> ok | {error, Reason::term()}
+create_table(Name::string(), KeyDef::[atom()], Options::[table_option()]) ->
+    ok | {error, Reason::term()}
 ```
+
 Creates a table that is defined by Name, Key, Columns and optionally Indexes. Key is a list and if list has more than one element, then the key will ba a compound key. Columns list consist of name of each column as atom and inclusion of key columns are optional. Indexes list are optional and an index table will be created for each coulmn provided in this argument. Any given index column is not neccesarly included in Columns.
 
 

@@ -11,13 +11,15 @@ url: "http://0.0.0.0:4000/"
 #    extensions:
 #      - generate_toc
 
-markdown: redcarpet
+markdown: kramdown
+
 redcarpet:
     renderer: [smart]
     extensions: [with_toc_data, fenced_code_blocks, space_after_headers, tables, no_intra_emphasis, autolink]
 
 #Github defaults that can be overwritten
 #highlighter: pygments
+highlighter: rouge
 #github: [Repository metadata]
 #Github defaults that cannot be overwritten
 #safe: true
