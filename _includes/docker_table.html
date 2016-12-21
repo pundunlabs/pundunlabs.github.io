@@ -1,0 +1,25 @@
+{% assign columns = "OS,Version,Docker Pull Command"  | split: ',' %}
+{% assign files = site.pages | where: "layout", "file" %}
+<table class="responsive-table table">
+    <thead>
+	<tr>
+	    {% for col in columns %}
+		<th scope="col">{{ col }}</th>
+	    {% endfor %}
+	</tr>
+    </thead>
+    <tbody>
+	{{ assign total = 0 }}
+	{% for file in files %}
+	    <tr>
+		{% assign tokens = file.Path | split: '/' %}
+		{% assign os = tokens[1] %}
+		{% assign version = file.Name | slice: 7,6 %}
+		<td data-title="OS"> {{ os }} </td>
+		<td data-title="Version"> {{ version }} </td>
+		{% assign docker_pull = "docker pull pundunlabs/pundun-" %}
+		<td data-title="Docker Pull Command"> {{ docker_pull | append: version | append: ":" | append: os }} </td>
+	    </tr>
+	{% endfor %}
+    </tbody>
+</table>
