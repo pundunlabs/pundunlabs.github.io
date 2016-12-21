@@ -1,5 +1,5 @@
 {% assign columns = "OS Version File Size md5sum"  | split: ' ' %}
-{% assign files = site.pages | where: "layout", "file" %}
+{% assign files = site.pages | where: "layout", "file" | sort: 'Path' %}
 <table class="responsive-table table">
     <thead>
 	<tr>
