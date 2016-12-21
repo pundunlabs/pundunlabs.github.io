@@ -1,0 +1,24 @@
+{% assign columns = "OS Version File Size md5sum"  | split: ' ' %}
+{% assign files = site.pages | where: "layout", "file" %}
+<table class="responsive-table table">
+    <thead>
+	<tr>
+	    {% for col in columns %}
+		<th scope="col">{{ col }}</th>
+	    {% endfor %}
+	</tr>
+    </thead>
+    <tbody>
+	{{ assign total = 0 }}
+	{% for file in files %}
+	    <tr>
+		{% assign tokens = file.Path | split: '/' %}
+		<td data-title="OS"> {{ tokens[1] }} </td>
+		<td data-title="Version"> {{ file.Name }} </td>
+		<td data-title="File"><a href="{{file.DownloadUrl}} "> {{ file.Name }} </a></td>
+		<td data-title="Size"> {{ file.Size }} </td>
+		<td data-title="md5sum"> {{ file.Md5sum }} </td>
+	    </tr>
+	{% endfor %}
+    </tbody>
+</table>

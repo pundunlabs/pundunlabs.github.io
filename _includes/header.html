@@ -43,7 +43,12 @@
 			    {% if page.url contains "docs" %}
 				class="active" 
 			    {% endif %}
-			><a href="/docs">Docs</a></li>
+			><a href="/docs">Documentation</a></li>
+			<li
+			    {% if page.url contains "downloads" %}
+				class="active" 
+			    {% endif %}
+			><a href="/downloads">Downloads</a></li>
 			<li
 			    {% if page.url contains "blog" %}
 				class="active" 
