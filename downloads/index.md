@@ -26,7 +26,7 @@ git clone https://github.com/pundunlabs/pundun.git
 
 #### Go API:
 ```sh
-git clone https://github.com/erdemaksu/pundun.git
+go get github.com/erdemaksu/pundun.git
 ```
 
 #### Erlang API:

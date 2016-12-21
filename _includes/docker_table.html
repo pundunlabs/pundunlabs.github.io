@@ -1,5 +1,5 @@
 {% assign columns = "OS,Version,Docker Pull Command"  | split: ',' %}
-{% assign files = site.pages | where: "layout", "file" | sort: 'Path' %}
+{% assign files = site.pages | where: "layout", "file" | sort: 'Path' | reverse %}
 <table class="responsive-table table">
     <thead>
 	<tr>
