@@ -14,7 +14,7 @@
 	    <tr>
 		{% assign tokens = file.Path | split: '/' %}
 		<td data-title="OS"> {{ tokens[1] }} </td>
-		<td data-title="Version"> {{ file.Name | slice: 7,6}} </td>
+		<td data-title="Version"> {{ file.Name | slice: 7,5}} </td>
 		<td data-title="File"><a href="{{file.DownloadUrl}} "> {{ file.Name }} </a></td>
 		<td data-title="Size"> {{ file.Size }} </td>
 		<td data-title="md5sum"> {{ file.Md5sum }} </td>
