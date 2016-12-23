@@ -2,127 +2,62 @@
 layout: docs
 title: Installation
 group: "navigation"
-order: "105"
+order: "115"
 ---
 
-# Installation of the framework
-
-Code base of the frame work is hosted on **skelter**.
-To contribute to development, contact the administrator of skelter.
-
-## Growbeard Resource Management, Build and Release Tool
-
-> IMPORTANT! If erl_leveldb app is going to be built, due to usage of dirty nifs in leveldb wrapper, OTP version 17 is required and OTP should be built with option **--enable-dirty-schedulers**
-
-To install the system:
-
-- Clone the git repository.
- --http://skelter/gits/growbeard.git 
-- Get dependencies, build and release using growbeard script as shown below.
-
-### Quick Start
+#### from source:
 
 ```sh
-$ git clone http://skelter/gits/growbeard.git
-$ cd growbeard
-growbeard$ ./growbeard get_deps
-growbeard$ ./growbeard configure
-growbeard$ ./growbeard build
-growbeard$ ./growbeard rel
+$ git clone https://github.com/pundunlabs/pundun.git
+$ git checkout -b v1.0.3 v1.0.3
+$ make package RELEASE=1
+$ #find your package under ./package/pacages/
+$ #on ubuntu:
+$ mv package/packages/pundun*.deb /var/cache/apt/archives/
+$ ls /var/cache/apt/archives/pundun*.deb | xargs dpkg -i
 ```
 
-> Currently there is no command defined for configure phase.
-> See example manifest file and reltool.config under examples/
-
-### Repository Structure
-This repo includes:
-
-- growbeard: Single script to execute resource management, configuration, building and release handling.
- - Optionally place the script "growbeard" in your path.
-- manifest: Declaration file for resources, command and configuration.
-
-Directory structure is as follows:
+#### from source for developers:
 
 ```sh
-$ tree growbeard/
-$ growbeard/
-$ |-- examples
-$ |   |-- manifest
-$ |   `-- reltool.config
-$ |-- growbeard
-$ |-- manifest
-$ |-- README.md
-$ `-- rel
-$     |-- reltool.config
-$     `-- runscript
+$ git clone https://github.com/pundunlabs/pundun.git
+$ rebar3 release
 ```
 
-- reltool.config: Erlang Reltool configuration file that includes system configuration.
- - Default declares profile as development. Change to embedded or standalone for installation packages.
-- runscript: The script to start, stop, attach to released erlang nodes.
-
-### Growbeard usage
+#### to manually deploy after build from source:
 
 ```sh
-growbeard$ ./growbeard --help 
-Usage: growbeard COMMAND [MANIFEST_FILE]
-where OPTION :: build | get_deps | rel
-      MANIFEST_FILE :: <PATH_TO_FILE> 
-
+$ git clone https://github.com/pundunlabs/pundun.git
+$ rebar3 as prod tar
+$ # or with erts included
+$ #rebar3 as target tar
 ```
 
-Manifest file syntax is as follows.
+#### on ubuntu 16.04 using pre-built package:
 
 ```sh
-LINE:
-    COMMENT | EMPTY | PHASE_START | OPERATION
-COMMENT:
-    #*
-EMPTY:
-    
-PHASE_START:
-    get_deps: | configure: | build: | rel:
-OPERATION:
-    GET_DEPS_OP | CONFIGURE_OP | BUILD_OP | REL_OP
-GET_DEPS_OP:
-    <GIT_URL>
-CONFIGURE_OP:
-    <SHELL_CMD>
-BUILD_OP:
-    <APP_NAME>
-REL_OP:
-    <PATH_TO_RELTOOL_CONFIG> | <CP_CMD> | <MKDIR_CMD>
+$ sudo cp pundun_1.0.3-1_amd64.deb /var/cache/apt/archives/
+$ sudo dpkg -i /var/cache/apt/archives/pundun_1.0.3-1_amd64.deb
 ```
 
-An example manifest file is as follows:
+#### alternatively using cloud repo;
 
 ```sh
- get_deps:
- [<GIT URL>]
- configure:
- [<COMMAND>]
- build:
- [<DIR_NAME_UNDER_SRC>]
- rel:
- <rel/reltool.config>
- [<MKDIR CMD> || <CP_CMD>]
+$ curl -s https://packagecloud.io/install/repositories/erdemaksu/pundun/script.deb.sh | sudo bash
+$ sudo apt-get install pundun=1.0.3-1
 ```
 
-## Configuring and Starting the System
+#### on centos 6.7 using pre-built repo:
 
 ```sh
-growbeard$ cd rel
-rel$ pundun/bin/pundun help
-Usage: pundun {start|stop|attach|configure}
-rel$ pundun/bin/pundun configure
-rel$ pundun/bin/pundun start
-Starting pundun
-rel$ pundun/bin/pundun attach
-Attaching to pundun
-....
-(pundun@<HOSTNAME>)1> [Quit]
-rel$ pundun/bin/pundun stop
-Stopping pundun
-==> ok
+$ sudo rpm -Uvh pundun-1.0.3-1.el6.x86_64.rpm
 ```
 
+#### alternatively using cloud repo:;
+
+```sh
+$ curl -s https://packagecloud.io/install/repositories/erdemaksu/pundun/script.rpm.sh | sudo bash
+$ sudo yum install pundun-1.0.3-1.el6.x86_64
+```
+
+[top :arrow_up:](#)
