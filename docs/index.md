@@ -24,14 +24,14 @@ on centos 6.7:
 $ sudo rpm -Uvh pundun-1.0.3-1.el6.x86_64.rpm
 ```
 
-[top :arrow_up:](#) [more on installation :arrow_right:](/documentation/installation)
+[top :arrow_up:](#) [more on installation :arrow_right:](/docs/installation)
 
 ### System Architecture
 
 
-Pundun Data Management Framework is deigned to be a distributed system, although it could be used as a single node system. Deployment of a multi node system requires configuration of pundun instances and operational tasks which are described in this documentation. On this page you will the find minimum to get hands on pundun.
+Pundun Data Management Framework is deigned to be a distributed system, although it could be used as a single node system. Deployment of a multi node system requires configuration of pundun instances and operational tasks which are described in this docs. On this page you will the find minimum to get hands on pundun.
 
-[top :arrow_up:](#) [more on system architecture :arrow_right:](/documentation/system_architecture)
+[top :arrow_up:](#) [more on system architecture :arrow_right:](/docs/system_architecture)
 
 ### Configuration
 
