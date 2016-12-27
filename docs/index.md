@@ -9,7 +9,7 @@ order: "100"
 
 
 One may install pundun from pre-built packages or from source code.
-To install a pre-built package, download desired version form [downloads:link:](/downloads/) page or use pundun [repo:link:](https://packagecloud.io/erdemaksu/pundun) as a software source on target system.
+To install a pre-built package, download desired version form [downloads](/downloads/) page or use pundun [repo](https://packagecloud.io/erdemaksu/pundun) as a software source on target system.
 
 on ubuntu 16.04:
 
