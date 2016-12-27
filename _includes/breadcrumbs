@@ -17,7 +17,7 @@
 		{% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
 		{% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
 	    
-		<li><a href="{{previous}}">{{first_word}}</a></li>
+		<li><a href="{{previous}}">{{first_word |replace: "_", " " }}</a></li>
 	    
 	    
 		{% unless forloop.last %} {% endunless %}
