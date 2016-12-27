@@ -1,6 +1,7 @@
 	<script src="/js/jquery-1.11.2.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/toc.js"></script>
+	<script src="/js/clipboard.min.js"></script>
 
 	<script type="text/javascript">
 	    $(document).ready(function() {
@@ -16,9 +17,30 @@
 		
 		$( "li.active" ).parent().closest( "li" ).addClass( "active" );
 		$( "ul.sub-ul" ).parent().children(":first").prepend( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
-		
+
+		var snippets = document.querySelectorAll(".highlight");
+		for (var i = 0; i < snippets.length; i++) {
+		    var clipboard = document.createElement("BUTTON");
+		    var clclass = document.createAttribute("class");
+		    clclass.value = "btn btn-default btn-xs clp-btn";
+		    var clstyle = document.createAttribute("style");
+		    clstyle.value = "float: right";
+		    clipboard.setAttributeNode(clclass);
+		    clipboard.setAttributeNode(clstyle);
+		    var clgly = document.createElement("SPAN");
+		    var glyclass = document.createAttribute("class");
+		    glyclass.value = "glyphicon glyphicon-copy";
+		    clgly.setAttributeNode(glyclass);
+		    clipboard.appendChild(clgly);
+		    snippets[i].insertBefore(clipboard, snippets[i].firstChild);
+		}
+		var btns = document.querySelectorAll('.clp-btn');
+		new Clipboard(btns,{
+		    target: function(trigger) {
+			return trigger.nextElementSibling;
+		    }
+		});
 	    });
 	</script>
-
     </body>
 </html>
