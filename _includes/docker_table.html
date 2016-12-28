@@ -14,7 +14,7 @@
 	    <tr>
 		{% assign tokens = file.Path | split: '/' %}
 		{% assign os = tokens[1] %}
-		{% assign version = file.Name | slice: 7,6 %}
+		{% assign version = file.Name | slice: 7,5 %}
 		<td data-title="OS"> {{ os }} </td>
 		<td data-title="Version"> {{ version }} </td>
 		{% assign docker_pull = "docker pull pundunlabs/pundun-" %}
