@@ -4,6 +4,8 @@ title: Installation
 group: "navigation"
 order: "115"
 ---
+* TOC
+{:toc}
 
 #### from source:
 

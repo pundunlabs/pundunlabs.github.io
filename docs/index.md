@@ -4,6 +4,8 @@ title: Documentation
 group: "navigation"
 order: "100"
 ---
+* TOC
+{:toc}
 
 ### Getting started
 
