@@ -16,14 +16,14 @@ To install a pre-built package, download desired version form [downloads](/downl
 on ubuntu 16.04:
 
 ```sh
-sudo cp pundun_1.0.3-1_amd64.deb /var/cache/apt/archives/
-sudo dpkg -i /var/cache/apt/archives/pundun_1.0.3-1_amd64.deb
+sudo cp pundun_{{ site.data.global.version }}-1_amd64.deb /var/cache/apt/archives/
+sudo dpkg -i /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb
 ```
 
 on centos 6.7:
 
 ```sh
-sudo rpm -Uvh pundun-1.0.3-1.el6.x86_64.rpm
+sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
 ```
 
 [top {% include arrow_up %}](#) [more on installation {% include arrow_right %}](/docs/installation)
@@ -45,7 +45,7 @@ SSL certificate and key files should be defined here.
 To generate self signed certificate files, one may use below commands.
 
 ```sh
-cd /usr/lib/pundun/lib/pundun-*/priv/
+cd /usr/lib/pundun/lib/pundun-{{ site.data.global.version }}/priv/
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 1095 -nodes
 ```
 
@@ -57,7 +57,7 @@ Modify `pundun_cli_options` parameter.
 Under specified `user_dir`, place public and private keys for ssh client.
 
 ```sh
-cd /usr/lib/pundun/lib/pundun-*/priv/ssh
+cd /usr/lib/pundun/lib/pundun-{{ site.data.global.version }}/priv/ssh
 ssh-keygen -t rsa -f <user_dir>/id_rsa
 ```
 
@@ -95,14 +95,3 @@ ssh localhost -p 8989
 ```
 Or ssh to remote node that listens on a configured ip and port.
 [top {% include arrow_up %}](#)
-
-### Operation
-
-
-[top {% include arrow_up %}](#)
-
-### User Manual
-
-
-[top {% include arrow_up %}](#)
-

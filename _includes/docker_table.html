@@ -1,5 +1,5 @@
 {% assign columns = "OS,Version,Docker Pull Command"  | split: ',' %}
-{% assign files = site.pages | where: "layout", "file" | sort: 'Path' | reverse %}
+{% assign packages = site.data.packages | sort: 'Path' | reverse  %}
 <table class="responsive-table table">
     <thead>
 	<tr>
@@ -9,8 +9,7 @@
 	</tr>
     </thead>
     <tbody>
-	{{ assign total = 0 }}
-	{% for file in files %}
+	{% for file in packages %}
 	    <tr>
 		{% assign tokens = file.Path | split: '/' %}
 		{% assign os = tokens[1] %}

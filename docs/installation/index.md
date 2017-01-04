@@ -11,12 +11,12 @@ order: "115"
 
 ```sh
 git clone https://github.com/pundunlabs/pundun.git
-git checkout -b v1.0.3 v1.0.3
+git checkout -b v{{ site.data.global.version }} {{ site.data.global.version }}
 make package RELEASE=1
 #find your package under ./package/pacages/
 #on ubuntu:
-mv package/packages/pundun*.deb /var/cache/apt/archives/
-ls /var/cache/apt/archives/pundun*.deb | xargs dpkg -i
+mv package/packages/pundun_{{ site.data.global.version }}-1_amd64.deb /var/cache/apt/archives/
+ls /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb | xargs dpkg -i
 ```
 
 #### from source for developers:
@@ -38,28 +38,28 @@ rebar3 as prod tar
 #### on ubuntu 16.04 using pre-built package:
 
 ```sh
-sudo cp pundun_1.0.3-1_amd64.deb /var/cache/apt/archives/
-sudo dpkg -i /var/cache/apt/archives/pundun_1.0.3-1_amd64.deb
+sudo cp pundun_{{ site.data.global.version }}-1_amd64.deb /var/cache/apt/archives/
+sudo dpkg -i /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb
 ```
 
 #### alternatively using cloud repo;
 
 ```sh
 curl -s https://packagecloud.io/install/repositories/erdemaksu/pundun/script.deb.sh | sudo bash
-sudo apt-get install pundun=1.0.3-1
+sudo apt-get install pundun={{ site.data.global.version }}-1
 ```
 
 #### on centos 6.7 using pre-built repo:
 
 ```sh
-sudo rpm -Uvh pundun-1.0.3-1.el6.x86_64.rpm
+sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
 ```
 
 #### alternatively using cloud repo:;
 
 ```sh
 curl -s https://packagecloud.io/install/repositories/erdemaksu/pundun/script.rpm.sh | sudo bash
-sudo yum install pundun-1.0.3-1.el6.x86_64
+sudo yum install pundun-{{ site.data.global.version }}-1.el6.x86_64
 ```
 
 [top {% include arrow_up %}](#)
