@@ -5,11 +5,19 @@ group: "navigation"
 order: "124"
 ---
 
-Pundun installed images can be found at [docker hub :link:](https://hub.docker.com/u/pundunlabs/).
+Pundun installed images can be found at [docker hub](https://hub.docker.com/u/pundunlabs/).
 
 ```sh
 $ docker pull pundunlabs/pundun-v1.0.3:ubuntu-16.04
+```
+```sh
+$ docker pull pundunlabs/pundun-v1.0.3:ubuntu-14.04
+```
+```sh
+$ docker pull pundunlabs/pundun-v1.0.3:centos-7
+```
+```sh
 $ docker pull pundunlabs/pundun-v1.0.3:centos-6.7
 ```
 
-[top :arrow_up:](#)
+[top {% include arrow_up %}](#)

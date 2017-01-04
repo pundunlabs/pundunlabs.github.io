@@ -45,7 +45,7 @@ SSL certificate and key files should be defined here.
 To generate self signed certificate files, one may use below commands.
 
 ```sh
-cd /var/lib/pundun/lib/pundun-*/priv/
+cd /usr/lib/pundun/lib/pundun-*/priv/
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 1095 -nodes
 ```
 
@@ -57,7 +57,7 @@ Modify `pundun_cli_options` parameter.
 Under specified `user_dir`, place public and private keys for ssh client.
 
 ```sh
-cd /var/lib/pundun/lib/pundun-*/priv/ssh
+cd /usr/lib/pundun/lib/pundun-*/priv/ssh
 ssh-keygen -t rsa -f <user_dir>/id_rsa
 ```
 
@@ -77,7 +77,7 @@ service pundun start
 pundun start
 ```
 
-Read local logs from `var/lib/pundun/log/local.pundun.log` file.
+Read local logs from `/usr/lib/pundun/log/local.pundun.log` file.
 
 ```sh
 service pundun start
