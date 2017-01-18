@@ -1,6 +1,6 @@
 {% assign columns = "OS,Version,Docker Pull Command"  | split: ',' %}
 {% assign packages = site.data.packages | sort: 'Path' | reverse  %}
-<table class="responsive-table table">
+<table class="responsive-table table table-bordered">
     <thead>
 	<tr>
 	    {% for col in columns %}
