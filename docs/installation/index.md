@@ -26,7 +26,7 @@ sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
 git clone https://github.com/pundunlabs/pundun.git
 git checkout -b v{{ site.data.global.version }} v{{ site.data.global.version }}
 make package RELEASE=1
-#find your package under ./package/pacages/
+#find your package under ./package/packages/
 #on ubuntu:
 mv package/packages/pundun_{{ site.data.global.version }}-1_amd64.deb /var/cache/apt/archives/
 ls /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb | xargs dpkg -i
