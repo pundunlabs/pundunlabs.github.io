@@ -24,7 +24,7 @@ sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
 
 ```sh
 git clone https://github.com/pundunlabs/pundun.git
-git checkout -b v{{ site.data.global.version }} {{ site.data.global.version }}
+git checkout -b v{{ site.data.global.version }} v{{ site.data.global.version }}
 make package RELEASE=1
 #find your package under ./package/pacages/
 #on ubuntu:
