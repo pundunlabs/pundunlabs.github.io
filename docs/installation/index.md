@@ -22,8 +22,11 @@ sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
 
 #### from source:
 
+> If you are building from source, keep in mind to enable dirty schedulers while building Erlang OTP. Erlang OTP version should be >= 19.
+
 ```sh
 git clone https://github.com/pundunlabs/pundun.git
+cd pundun
 git checkout -b v{{ site.data.global.version }} v{{ site.data.global.version }}
 make package RELEASE=1
 #find your package under ./package/packages/
@@ -36,6 +39,7 @@ ls /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb | x
 
 ```sh
 git clone https://github.com/pundunlabs/pundun.git
+cd pundun
 rebar3 release
 ```
 
@@ -43,6 +47,7 @@ rebar3 release
 
 ```sh
 git clone https://github.com/pundunlabs/pundun.git
+cd pundun
 rebar3 as prod tar
 # or with erts included
 #rebar3 as target tar
