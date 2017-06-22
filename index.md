@@ -25,8 +25,6 @@ overview: true
 Pundun stores data on a cluster of nodes where data can be partioned and replicated among the nodes. Pundun nodes communicate with each other using gossip protocol. Data stored in concept of eventual consistency while the consistency level is configurable for read and write operations.
 
 
-Pundun uses Leveldb at backend and parallel writes are enabled using local sharding on the multi core machine nodes.
-
 Pundun clusters are dynamic. A node can be removed from or new nodes can be added into a pundun cluster.
 
 Database operations can be done on any node by connecting through a client. Pundun implements its own binary protocol (Pundun Binary Protocol) which uses SCRAM Authentication and runs over TLS connections. Pundun Binary Protocol aka Apollo is defined in protocol buffers format. Client implementations can get use of asn1 and protobuf compilers. Currently an erlang client (PBPC) exists that implements the Apollo protocol.
