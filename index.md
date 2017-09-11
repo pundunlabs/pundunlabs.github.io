@@ -4,56 +4,87 @@ title: pundun home
 overview: true
 ---
 
-{% capture column0 %}
+{% capture column00 %}
 # Pundun - Data Management Framework with a Distributed Database
+{% endcapture %}
 
-#### Pundun is an open source framework project developed in Erlang Programming Language and on OTP. Framework contains a key-value database that is designed suitable for statistical data analysis. Project's purpose is to enable processing high volumes of distributed data streams, thus it can be used to get high throughput in a cost effective way using it's de-centrelized approach of storing and managing data.
-
- Pundun offers solutions where;
- 
- - data is perishable and needs to be processed on time.
- - data availability is significant and should be replicated.
- - data is big and should be partioned.
- - data within context should be processed together.
+{% capture column10 %}
+### Pundun at a glance:
+> - Distributed, Wide Column, NoSQL database.
+> - Fault tolerance through replication and auto recovery.
+> - High throughput, persistent storage.
+> - In-built data retention policy management.
+> - In-built text analysis and term indexing per table column.
+> - Data localization through configurable consistent hashing.
+> - Horizontal scalability by adding and removing nodes.
 
 {% endcapture %}
 
-{% capture column1 %}
+{% capture column11 %}
+### Pundun offers solutions where; 
+> - data is perishable and needs to be processed on time.
+> - fault tolerance is significant and data should be replicated.
+> - system should be scalable and data can be partitioned.
+> - data within context should be processed together.
+> - streaming data should be kept for a configurable amount of time and processed on demand.
+> - column data with text or terms needs to be analyzed and indexed in close to real-time manner.
+
+{% endcapture %}
+
+{% capture column20 %}
+#### Pundun is an open source framework project developed in Erlang Programming Language and on OTP. Framework contains a key-value database that is designed suitable for statistical data analysis. Project's purpose is to enable processing high volumes of distributed data streams, thus it can be used to get high throughput in a cost effective way using it's decentralized approach of storing and managing data.
+{% endcapture %}
+
+
+{% capture column30 %}
 ### Distributed Database Solution
 
+Pundun stores data on a cluster of nodes where data can be partitioned and replicated among the nodes. Pundun nodes communicate with each other using gossip protocol. Data stored in concept of eventual consistency while the consistency level is configurable for read and write operations.
 
-Pundun stores data on a cluster of nodes where data can be partioned and replicated among the nodes. Pundun nodes communicate with each other using gossip protocol. Data stored in concept of eventual consistency while the consistency level is configurable for read and write operations.
+Pundun clusters are dynamic. A node can be removed from or new nodes can be added into a Pundun cluster.
 
-
-Pundun clusters are dynamic. A node can be removed from or new nodes can be added into a pundun cluster.
-
-Database operations can be done on any node by connecting through a client. Pundun implements its own binary protocol (Pundun Binary Protocol) which uses SCRAM Authentication and runs over TLS connections. Pundun Binary Protocol aka Apollo is defined in protocol buffers format. Client implementations can get use of asn1 and protobuf compilers. Currently an erlang client (PBPC) exists that implements the Apollo protocol.
 
 {% endcapture %}
 
-{% capture column2 %}
-### Contextual Optimization
+{% capture column31 %}
+### Data Localization
 
-Pundun database supports compound keys that consist of multiple data fields. Partiotioning of data is based on key values and Pundun optimizes the movement of data by contextual partitioning. 
+Pundun database supports compound keys that consist of multiple data fields. Partitioning of data is based on key values and Pundun optimizes the transferring of data by contextual partitioning. 
 
-One very common example of this is time series data where database keys are compound and contain timestamp values. In such context, Pundun database tables can be configured to exclude timestamp values while partioning, thus it keeps contextually related data close to each other. This approach optimizes the movement of data within a cluster and improves data processing performance.
-
-Contextual optimization is not limited to time series data but it can be used by configuring database tables through excluding any number of fields in compound keys.
-
-Pundun implements iterators and additionally a set of data can be read within a key range or in chunks.
+Contextual optimization excludes any desired number of fields from compound keys when partitioning the data. By keeping contextually similar data close to each other, data analysis and processing will require less data transfer on network.
 
 {% endcapture %}
 
-{% capture column3 %}
+{% capture column32 %}
 ### Inbuilt Data Purge Mechanism
 
 Most of the streaming big data solutions are focused on event, transaction, telemetry or similar data where the value of the data is lost by time and the data eventually parishes.
 
-Pundun offers seemless data purge for old data. A database table can be configured to purge data after a period of time and/or size of table exceeds some limit.
- 
-We call these tables wrapping since they actually consist of a number of buckets that wraps by time or size. Purge of data is not done one database entry a time but one bucket at a time. This approach enables faster purge of chunks of parished data.
+Pundun offers seamless data purge for old data. A database table can be configured to purge data after a given TTL value (Time To Live).
 
-Partioning and replication of wrapping tables are supported. Wrapping tables use same API as any Pundun table and operations like iteration and reading key ranges are still supported for wrapping tables.
+{% endcapture %}
+
+{% capture column40 %}
+### APIs and Security
+Database operations can be done on any node by connecting through a client. Pundun implements its own binary protocol (Pundun Binary Protocol) which uses SCRAM Authentication and runs over TLS connections.
+
+Pundun Binary Protocol aka Apollo is defined in protocol buffers format. Client implementations can get use of protobuf compilers. Currently, Erlang (pbpc), Go (pundun) and Javascript (pundunjs) clients exist that implement the Apollo protocol.
+
+{% endcapture %}
+
+{% capture column41 %}
+### Indexing and Text Analysis
+Pundun has in-built indexing support per column data. A column may store any type of data. To index columns, a table can be configured per it's columns, to define how to analyse and index the column data.
+
+Column data can be analysed as a singular term or as a text. Text can be, Unicode normalized, tokenized, transformed, and filtered according to given configuration. Indexed terms can be analyzed according to occurrence frequencies and their positions in the text.
+
+{% endcapture %}
+
+{% capture column42 %}
+### Time Series Support
+Applying data localization together with in-built data purge mechanism optimizes management of time series data.
+
+When database keys contain time-stamp values, and input is a continuous data stream, Pundun database tables can be configured to exclude time-stamp values while partitioning, and a desired TTL value can be given to purge perished data.
 
 {% endcapture %}
 
