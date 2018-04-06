@@ -42,19 +42,19 @@
 			    {% endif %}
 			><a href="/">Project</a></li>
 			<li
+			    {% if page.url contains "getting_started" %}
+				class="active" 
+			    {% endif %}
+			><a href="/getting_started">Getting Started</a></li>
+			<li
 			    {% if page.url contains "docs" %}
 				class="active" 
 			    {% endif %}
 			><a href="/docs">Docs</a></li>
 			<li
-			    {% if page.url contains "downloads" %}
-				class="active" 
-			    {% endif %}
-			><a href="/downloads">Downloads</a></li>
-			<li
 			    {% if page.url contains "blog" %}
 				class="active" 
-			    {% endif %}
+			    {% endif %}			
 			><a href="/blog">Blog</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav" style="float: right">
