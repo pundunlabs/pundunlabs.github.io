@@ -16,7 +16,7 @@
 		$( "li.active" ).parent().closest( "li" ).addClass( "active" );
 		$( "ul.sub-ul" ).parent().children(":first").prepend( "<i class=\"pls glyphicon glyphicon-collapse-down\"></i>" );;
 
-		var snippets = document.querySelectorAll(".highlight");
+		var snippets = document.querySelectorAll("pre.highlight");
 		for (var i = 0; i < snippets.length; i++) {
 		    var clipboard = document.createElement("BUTTON");
 		    var clclass = document.createAttribute("class");

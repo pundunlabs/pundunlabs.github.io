@@ -7,7 +7,7 @@ order: "100"
 * TOC
 {:toc}
 
-### Getting started
+### Getting Started
 
 
 One may install pundun from pre-built packages or from source code.
