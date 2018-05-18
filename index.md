@@ -68,7 +68,7 @@ Pundun offers seamless data purge for old data. A database table can be configur
 ### APIs and Security
 Database operations can be done on any node by connecting through a client. Pundun implements its own binary protocol (Pundun Binary Protocol) which uses SCRAM Authentication and runs over TLS connections.
 
-Pundun Binary Protocol aka Apollo is defined in protocol buffers format. Client implementations can get use of protobuf compilers. Currently, Erlang (pbpc), Go (pundun) and Javascript (pundunjs) clients exist that implement the Apollo protocol.
+Pundun Binary Protocol aka Apollo is defined in protocol buffers format. Client implementations can get use of protobuf compilers. Currently, Erlang (pbpc), Go (pundun), Javascript (pundunjs) and Python (pundunpy) clients exist that implement the Apollo protocol.
 
 {% endcapture %}
 
