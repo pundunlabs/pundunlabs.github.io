@@ -63,7 +63,10 @@ pundun start
 
 ### Configuring Pundun
 
-To access Pundun for database operations and using Pundun CLI, below configurations should be done.
+#### Requirements on System Configuration
+
+It is reccomended to increase the limits for maximum number of open files.
+On linux systems one may edit '/etc/security/limits.conf' file to increase 'nofile' to enforce soft and hard limits.
 
 #### Configuring Pundun Binary Protocol Server
 
