@@ -65,7 +65,7 @@ pundun start
 
 #### Requirements on System Configuration
 
-It is reccomended to increase the limits for maximum number of open files.
+It is recommended to increase the limits for maximum number of open files.
 On linux systems one may edit '/etc/security/limits.conf' file to increase 'nofile' to enforce soft and hard limits.
 
 #### Configuring Pundun Binary Protocol Server
