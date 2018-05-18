@@ -4,94 +4,34 @@ title: Documentation
 group: "navigation"
 order: "100"
 ---
-* TOC
-{:toc}
 
-### Getting Started
+{% capture column00 %}
+### Welcome to Pundun Documentation
 
+{% endcapture %}
 
-One may install pundun from pre-built packages or from source code.
-To install a pre-built package, download desired version form [downloads](/downloads/) page or use pundun [repo](https://packagecloud.io/erdemaksu/pundun) as a software source on target system.
+{% capture column10 %}
+#### [Getting Started](/docs/{{ site.data.global.mm_version }}/)
+Brief installation and usage instructions.
 
-on ubuntu 16.04:
+{% endcapture %}
 
-```sh
-sudo cp pundun_{{ site.data.global.version }}-1_amd64.deb /var/cache/apt/archives/
-sudo dpkg -i /var/cache/apt/archives/pundun_{{ site.data.global.version }}-1_amd64.deb
-```
+{% capture column11 %}
+#### [CLI](/docs/{{ site.data.global.mm_version }}/cli/)
+Usage of CLI tool for operators.
 
-on centos 6.7:
+{% endcapture %}
 
-```sh
-sudo rpm -Uvh pundun-{{ site.data.global.version }}-1.el6.x86_64.rpm
-```
+{% capture column20 %}
+#### [Configuration](/docs/{{ site.data.global.mm_version }}/configuration/)
+Configure Pundun for your use case.
 
-[top {% include arrow_up %}](#) [more on installation {% include arrow_right %}](/docs/installation)
+{% endcapture %}
 
-### System Architecture
+{% capture column21 %}
+#### [APIs](/docs/{{ site.data.global.mm_version }}/apis/)
+Erlang, Python, Go, Javascript APIs.
 
+{% endcapture %}
 
-Pundun Data Management Framework is deigned to be a distributed system, although it could be used as a single node system. Deployment of a multi node system requires configuration of pundun instances and operational tasks which are described in this docs. On this page you will the find minimum to get hands on pundun.
-
-[top {% include arrow_up %}](#) [more on system architecture {% include arrow_right %}](/docs/system_architecture)
-
-### Configuration
-
-
-Edit '/etc/pundun.yaml';
-Modify 'pbp_server_options' parameter.
-
-SSL certificate and key files should be defined here.
-To generate self signed certificate files, one may use below commands.
-
-```sh
-cd /usr/lib/pundun/lib/pundun-{{ site.data.global.version }}/priv/
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 1095 -nodes
-```
-
-#### Configuring SSH Daemon
-
-
-Edit `/etc/pundun.yaml`.
-Modify `pundun_cli_options` parameter.
-Under specified `user_dir`, place public and private keys for ssh client.
-
-```sh
-cd /usr/lib/pundun/lib/pundun-{{ site.data.global.version }}/priv/ssh
-ssh-keygen -t rsa -f <user_dir>/id_rsa
-```
-
-Under specified `system_dir`, place public and private keys for ssh host.
-
-```sh
-ssh-keygen -t rsa -f <system_dir>/ssh_host_rsa_key
-```
-
-Store any public key in `authorized_keys` file at the configured `system_dir`.
-
-#### Starting the pundun node
-
-```sh
-service pundun start
-# or
-pundun start
-```
-
-Read local logs from `/usr/lib/pundun/log/local.pundun.log` file.
-
-```sh
-service pundun start
-# or
-pundun start
-```
-
-#### Connecting to Command Line Interface
-
-
-To connect local pundun node`s CLI that is created as above.
-
-```sh
-ssh localhost -p 8989
-```
-Or ssh to remote node that listens on a configured ip and port.
-[top {% include arrow_up %}](#)
+{% include docs_home_template.html %}

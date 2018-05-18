@@ -12,7 +12,7 @@
 	</li>
     {% endif %}
 
-    {% if depth == 3 %}
+    {% if depth == 4 %}
 	{% if node.url == page.url%}
 	    <li class="active">
 	{% else %}
