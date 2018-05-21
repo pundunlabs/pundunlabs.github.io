@@ -115,9 +115,49 @@ pundun> user passwd admin 4dm1nP@ss
 ok
 pundun> Connection to localhost closed.
 ```
+
+#### Set up a Cluster
+
+To set up a cluster of pundun nodes, one can use the CLI as follows.
+
+```
+ssh admin@localhost -p8884
+SSH server
+Enter password for "admin"
+password:
+Welcome to Pundun Command Line Interface
+pundun> cluster show
+Cluster: cl01
+Node            DC    Rack    Version
+pundun832a87@sleepy    dc01    rack01    1
+
+pundun> cluster add_host sitting
+ok
+pundun> cluster pull pundun97ae64@sitting
+ok
+pundun> cluster show
+Cluster: cl01
+Node            DC    Rack    Version
+pundun832a87@sleepy    dc01    rack01    1
+pundun97ae64@sitting    dc01    rack01    1
+
+pundun>
+```
 [top {% include arrow_up %}](#) [more on CLI {% include arrow_right %}](/docs/1.0/cli)
 
 ### Client Drivers and API
+Following client dirvers are provided to operate on pundun nodes.
 
+#### Erlang
+- [pbpc](https://github.com/pundunlabs/pbpc)
+
+#### Go
+- [pundun](https://github.com/erdemaksu/pundun)
+
+#### Javascript
+- [pundunjs](https://github.com/pundunlabs/pundunjs)
+
+#### Python
+- [pundunpy](https://github.com/pundunlabs/pundunpy)
 
 [top {% include arrow_up %}](#) [more on installation {% include arrow_right %}](/docs/installation)
